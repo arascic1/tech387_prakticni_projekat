@@ -1,3 +1,4 @@
+import 'package:arascic_exam_app/screens/auth_screen.dart';
 import 'package:flutter/material.dart';
 
 // AHMED RAŠČIĆ
@@ -16,9 +17,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Ispitna aplikacija',
-
+    return const MaterialApp(
+      title: 'Ispitna aplikacija A.Raščić',
+      home: AuthScreen()
     );
   }
 }
