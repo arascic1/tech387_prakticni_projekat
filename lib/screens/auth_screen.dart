@@ -1,3 +1,4 @@
+import 'package:arascic_exam_app/credentials.dart';
 import 'package:arascic_exam_app/widgets/custom_button.dart';
 import 'package:arascic_exam_app/widgets/custom_password_field.dart';
 import 'package:arascic_exam_app/widgets/custom_textfield.dart';
@@ -13,6 +14,8 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  
+  bool _invalid = false;
 
   @override
   Widget build(BuildContext context) {
@@ -50,17 +53,41 @@ class _AuthScreenState extends State<AuthScreen> {
               )
             ),
 
-            const SizedBox(height: 20),
+            if(_invalid)
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'Pogrešan email ili password',
+                  style: TextStyle(color: Colors.red) 
+                ),
+              )
+            else
+              const SizedBox(height: 20), 
 
             CustomButton(
               text: 'Log In',
               onTap: () {
-
+                signIn();
               }
             )
           ],
         )
       )
     );
+  }
+
+  void signIn() {
+    if(
+      _emailController.text != Credentials.email 
+      || _passwordController.text != Credentials.password
+    ) {
+      setState(() {
+        _invalid = true;
+      });
+    } else {
+      setState(() {
+        _invalid = false;
+      });
+    }
   }
 }
