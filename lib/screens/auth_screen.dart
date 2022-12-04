@@ -1,4 +1,5 @@
 import 'package:arascic_exam_app/widgets/custom_button.dart';
+import 'package:arascic_exam_app/widgets/custom_password_field.dart';
 import 'package:arascic_exam_app/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +42,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
                   const SizedBox(height: 10),
 
-                  CustomTextField(
+                  CustomPasswordField(
                     controller: _passwordController,
                     hintText: 'Password',
                   )
