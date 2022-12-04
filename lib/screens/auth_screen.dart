@@ -1,3 +1,4 @@
+import 'package:arascic_exam_app/widgets/custom_button.dart';
 import 'package:arascic_exam_app/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
       body: SafeArea(
         minimum: const EdgeInsets.only(
-          top: 200,
+          top: 150,
           left: 50,
           right: 50,
         ),
@@ -28,7 +29,7 @@ class _AuthScreenState extends State<AuthScreen> {
           children: [
             Image.asset('res/Vector.png'),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 30),
 
             Form(
               child: Column(
@@ -46,6 +47,15 @@ class _AuthScreenState extends State<AuthScreen> {
                   )
                 ]
               )
+            ),
+
+            const SizedBox(height: 20),
+
+            CustomButton(
+              text: 'Log In',
+              onTap: () {
+
+              }
             )
           ],
         )
