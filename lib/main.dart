@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Ispitna aplikacija A.Raščić',
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: const HomeScreen()
+      home: const AuthScreen()
     );
   }
 }
