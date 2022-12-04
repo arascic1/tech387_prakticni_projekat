@@ -38,6 +38,7 @@ class HomeScreen extends StatelessWidget {
                       )
                     );
                   },
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
                   child: const Icon(Icons.logout, color: Colors.black),
                 )
               ),
@@ -78,6 +79,8 @@ class HomeScreen extends StatelessWidget {
                   )
                 ),
               ),
+
+              const SizedBox(height: 20),
 
               // lista
               ListView.builder(
@@ -125,6 +128,8 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
 
+              const SizedBox(height: 20),
+
               // lista
               ListView.builder(
                 scrollDirection: Axis.vertical,
@@ -171,6 +176,8 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
 
+              const SizedBox(height: 20),
+
               ListView.builder(
                 scrollDirection: Axis.vertical,
                 physics: const NeverScrollableScrollPhysics(),
@@ -203,6 +210,8 @@ class HomeScreen extends StatelessWidget {
                   );
                 }
               ),
+
+              const SizedBox(height: 20)
             ]
           ),
         )
