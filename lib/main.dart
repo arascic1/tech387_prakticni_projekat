@@ -1,6 +1,5 @@
 import 'package:arascic_exam_app/router.dart';
 import 'package:arascic_exam_app/screens/auth_screen.dart';
-import 'package:arascic_exam_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 // AHMED RAŠČIĆ

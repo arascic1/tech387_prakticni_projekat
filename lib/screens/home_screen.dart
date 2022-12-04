@@ -18,7 +18,28 @@ class HomeScreen extends StatelessWidget {
             children: [
               ListTile(
                 leading: Image.asset('res/Vector.png', width: 157, height: 32),
-                trailing: const Icon(Icons.logout, color: Colors.black)
+                trailing: ElevatedButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context, 
+                      builder: (ctx) => AlertDialog(
+                        title: const Text('Log Out', style: TextStyle(fontSize: 30)),
+                        content: const Text('Are you sure you want to log out from the console?'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Navigator.of(ctx).pop(), 
+                            child: const Text('Cancel')
+                          ), 
+                          TextButton(
+                            onPressed: () => Navigator.popAndPushNamed(ctx, '/auth'), 
+                            child: const Text('Yes')
+                          )
+                        ]
+                      )
+                    );
+                  },
+                  child: const Icon(Icons.logout, color: Colors.black),
+                )
               ),
 
               const SizedBox(height: 20),
