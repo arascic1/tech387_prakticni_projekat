@@ -1,4 +1,5 @@
-import 'package:arascic_exam_app/credentials.dart';
+import 'package:arascic_exam_app/data/credentials.dart';
+import 'package:arascic_exam_app/screens/home_screen.dart';
 import 'package:arascic_exam_app/widgets/custom_button.dart';
 import 'package:arascic_exam_app/widgets/custom_password_field.dart';
 import 'package:arascic_exam_app/widgets/custom_textfield.dart';
@@ -6,6 +7,8 @@ import 'package:flutter/material.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
+
+  static const String routeName = '/auth';
 
   @override
   State<AuthScreen> createState() => _AuthScreenState();
@@ -15,7 +18,7 @@ class _AuthScreenState extends State<AuthScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   
-  bool _invalid = false;
+  bool _invalid = false; 
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +91,12 @@ class _AuthScreenState extends State<AuthScreen> {
       setState(() {
         _invalid = false;
       });
+
+      Navigator.pushNamedAndRemoveUntil(
+        context, 
+        HomeScreen.routeName, 
+        (route) => false
+      );
     }
   }
 }

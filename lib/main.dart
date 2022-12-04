@@ -1,4 +1,6 @@
+import 'package:arascic_exam_app/router.dart';
 import 'package:arascic_exam_app/screens/auth_screen.dart';
+import 'package:arascic_exam_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 // AHMED RAŠČIĆ
@@ -17,9 +19,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Ispitna aplikacija A.Raščić',
-      home: AuthScreen()
+      onGenerateRoute: (settings) => generateRoute(settings),
+      home: const HomeScreen()
     );
   }
 }
