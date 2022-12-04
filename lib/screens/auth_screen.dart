@@ -1,7 +1,16 @@
+import 'package:arascic_exam_app/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
-class AuthScreen extends StatelessWidget {
+class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
+
+  @override
+  State<AuthScreen> createState() => _AuthScreenState();
+}
+
+class _AuthScreenState extends State<AuthScreen> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +20,33 @@ class AuthScreen extends StatelessWidget {
       body: SafeArea(
         minimum: const EdgeInsets.only(
           top: 200,
-          left: 50
+          left: 50,
+          right: 50,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('res/Vector.png')
+            Image.asset('res/Vector.png'),
+
+            const SizedBox(height: 10),
+
+            Form(
+              child: Column(
+                children: [
+                  CustomTextField(
+                    controller: _emailController,
+                    hintText: 'E-mail'
+                  ), 
+
+                  const SizedBox(height: 10),
+
+                  CustomTextField(
+                    controller: _passwordController,
+                    hintText: 'Password',
+                  )
+                ]
+              )
+            )
           ],
         )
       )
